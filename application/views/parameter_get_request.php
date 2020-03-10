@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php foreach($link as $arti => $warna):?>
 	<tr>
 		<td>
-			<a href="<?php echo site_url('parameter/get_result/'.$arti);?>">
+			<a href="<?php echo site_url('parameter/get_response/'.$arti);?>">
 				<input type="button" style="background-color:<?php echo $warna;?>">
 			</a>
 		</td>

@@ -7,9 +7,9 @@ class Parameter extends CI_Controller {
 		$this->get();
 	}
 
-	public function get() {
+	public function get_request() {
 		$output = array(
-					'judul' => 'Parameter Get',
+					'judul' => 'Parameter Get Request',
 					'link' => array(
 								'berhenti' => 'red',
 								'pelan' => 'yellow',
@@ -17,38 +17,38 @@ class Parameter extends CI_Controller {
 							)
 				);
 
-		$this->load->view('parameter_get', $output);
+		$this->load->view('parameter_get_request', $output);
 	}
 
-	public function get_result() {
+	public function get_response() {
 		$tanda = $this->uri->segment(3);
 
 		$output = array(
-					'judul' => 'Parameter Get Result',
+					'judul' => 'Parameter Get Response',
 					'tanda' => $tanda
 				);
 
-		$this->load->view('parameter_get_result', $output);
+		$this->load->view('parameter_get_response', $output);
 	}
 
-	public function post() {
+	public function post_request() {
 		$output = array(
-						'judul' => 'Parameter Post'
+						'judul' => 'Parameter Post Request'
 					);
-		$this->load->view('parameter_post', $output);
+		$this->load->view('parameter_post_request', $output);
 	}
 
-	public function post_result() {
+	public function post_response() {
 		$nama = $this->input->post('nama');
 		$umur = $this->input->post('umur');
 
 		$output = array(
-					'judul' => 'Parameter Post Result',
+					'judul' => 'Parameter Post Response',
 					'post' => array(
 						'nama' => $nama,
 						'umur' => $umur
 					)
 				);
-		$this->load->view('parameter_post_result', $output);
+		$this->load->view('parameter_post_response', $output);
 	}
 }

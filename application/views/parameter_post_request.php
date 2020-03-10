@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <h3><?php echo $judul;?></h3>
 
-<form method="post" action="<?php echo site_url('parameter/post_result/');?>">
+<form method="post" action="<?php echo site_url('parameter/post_response/');?>">
 	<table>
 		<tr>
 			<td>Nama</td>
