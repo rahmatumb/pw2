@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Parameter extends CI_Controller {
 
 	public function index() {
-		$this->get();
+		$this->get_request();
 	}
 
 	public function get_request() {
