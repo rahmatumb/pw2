@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <h3><?php echo $judul;?></h3>
 
-<h4>Tanda : <?php echo $tanda;?></h4>
+<h4 style="color:<?php echo $warna;?>">Tanda : <?php echo $tanda;?> </h4>
 
 </body>
 </html>
