@@ -17,7 +17,7 @@ class Provinsi extends CI_Controller {
 
 	public function read() {
 		//memanggil function read pada provinsi model
-		//function read berfungsi mengambil/read data dari table provinsi di database
+		//function read berfungsi mengambil/read data dari table provinsi di db
 		$data_provinsi = $this->provinsi_model->read();
 
 		//mengirim data ke view
