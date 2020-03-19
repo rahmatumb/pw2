@@ -6,9 +6,6 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 
-application/*/.htaccess
-application/config/database.php
-
 application/controller/firebase.php
 
 composer.lock
@@ -32,3 +29,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+application/config/database.php

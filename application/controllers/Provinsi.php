@@ -59,4 +59,55 @@ class Provinsi extends CI_Controller {
 		//mengembalikan halaman ke function read
 		redirect('provinsi/read');
 	}
+
+	public function update() {
+		//menangkap id data yg dipilih dari view (parameter get)
+		$id = $this->uri->segment(3);
+
+		//function read berfungsi mengambil 1 data dari table provinsi sesuai id yg dipilih
+		$data_provinsi_single = $this->provinsi_model->read_single($id);
+
+		//mengirim data ke view
+		$output = array(
+						'judul' => 'Tambah Provinsi',
+
+						//mengirim data provinsi yang dipilih ke view
+						'data_provinsi_single' => $data_provinsi_single,
+					);
+
+		//memanggil file view
+		$this->load->view('provinsi_update', $output);
+	}
+
+	public function update_submit() {
+		//menangkap id data yg dipilih dari view
+		$id = $this->uri->segment(3);
+
+		//menangkap data input dari view
+		$nama = $this->input->post('nama');
+
+		//mengirim data ke model
+		$input = array(
+						//format : nama field/kolom table => data input dari view
+						'nama' => $nama,
+					);
+
+		//memanggil function insert pada provinsi model
+		//function insert berfungsi menyimpan/create data ke table provinsi di database
+		$data_provinsi = $this->provinsi_model->update($input, $id);
+
+		//mengembalikan halaman ke function read
+		redirect('provinsi/read');
+	}
+
+	public function delete() {
+		//menangkap id data yg dipilih dari view
+		$id = $this->uri->segment(3);
+
+		//memanggil function delete pada provinsi model
+		$data_provinsi = $this->provinsi_model->delete($id);
+
+		//mengembalikan halaman ke function read
+		redirect('provinsi/read');
+	}
 }

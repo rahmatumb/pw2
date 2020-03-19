@@ -9,7 +9,7 @@
 
 <h1><?php echo $judul?></h1>
 
-<a href="<?php echo site_url('provinsi/insert');?>">Tambah Provinsi</a>
+<a href="<?php echo site_url('provinsi/insert');?>">Tambah</a>
 <br /><br />
 
 <table border="1">
@@ -17,6 +17,7 @@
 		<tr>
 			<th>ID</th>
 			<th>Nama</th>
+			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,6 +25,15 @@
 		<tr>
 			<td><?php echo $provinsi['id'];?></td>
 			<td><?php echo $provinsi['nama'];?></td>
+			<td>
+				<a href="<?php echo site_url('provinsi/update/'.$provinsi['id']);?>">
+				Ubah
+				</a>
+				|
+				<a href="<?php echo site_url('provinsi/delete/'.$provinsi['id']);?>">
+				Hapus
+				</a>
+			</td>
 		</tr>
 		<?php endforeach?>		
 	</tbody>
