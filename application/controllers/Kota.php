@@ -67,5 +67,63 @@ class Kota extends CI_Controller {
 		//mengembalikan halaman ke function read
 		redirect('kota/read');
 	}
-	
+
+	public function update() {
+		//menangkap id data yg dipilih dari view (parameter get)
+		$id = $this->uri->segment(3);
+		
+		//function read berfungsi mengambil 1 data dari table kota sesuai id yg dipilih
+		$data_kota_single = $this->kota_model->read_single($id);
+
+		//mengambil daftar provinsi dari table provinsi
+		$data_provinsi = $this->provinsi_model->read();
+
+		//mengirim data ke view
+		$output = array(
+						'judul' => 'Ubah kota',
+
+						//mengirim data kota yang dipilih ke view
+						'data_kota_single' => $data_kota_single,
+
+						//mengirim daftar provinsi ke view
+						'data_provinsi' => $data_provinsi,
+					);
+
+		//memanggil file view
+		$this->load->view('kota_update', $output);
+	}
+
+	public function update_submit() {
+		//menangkap id data yg dipilih dari view
+		$id = $this->uri->segment(3);
+
+		//menangkap data input dari view
+		$id_provinsi = $this->input->post('id_provinsi');
+		$nama = $this->input->post('nama');
+
+		//mengirim data ke model
+		$input = array(
+						//format : nama field/kolom table => data input dari view
+						'id_provinsi' => $id_provinsi,
+						'nama' => $nama,
+					);
+
+		//memanggil function update pada kota model
+		//function update berfungsi merubah data ke table kota di database
+		$data_kota = $this->kota_model->update($input, $id);
+
+		//mengembalikan halaman ke function read
+		redirect('kota/read');
+	}
+
+	public function delete() {
+		//menangkap id data yg dipilih dari view
+		$id = $this->uri->segment(3);
+
+		//memanggil function delete pada kota model
+		$data_kota = $this->kota_model->delete($id);
+
+		//mengembalikan halaman ke function read
+		redirect('kota/read');
+	}
 }
