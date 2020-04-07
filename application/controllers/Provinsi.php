@@ -112,6 +112,9 @@ class Provinsi extends CI_Controller {
 	}
 
 	public function export() {
+		//function read berfungsi mengambil/read data dari table provinsi di database
+		$data_provinsi = $this->provinsi_model->read();
+		
 		//load library excel
 		$this->load->library('excel');
 		$excel = $this->excel;
@@ -122,9 +125,6 @@ class Provinsi extends CI_Controller {
 		//header table
 		$excel->getActiveSheet()->setCellValue( 'A1', 'ID');
 		$excel->getActiveSheet()->setCellValue( 'B1', 'Nama');
-
-		//function read berfungsi mengambil/read data dari table provinsi di database
-		$data_provinsi = $this->provinsi_model->read();
 
 		//baris awal data dimulai baris 2 (baris 1 digunakan header)
 		$baris = 2;
