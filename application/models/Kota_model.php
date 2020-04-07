@@ -11,7 +11,8 @@ class Kota_model extends CI_Model {
         $this->db->select('provinsi.nama AS nama_provinsi');
         $this->db->from('kota');
         $this->db->join('provinsi', 'kota.id_provinsi = provinsi.id');
-        $this->db->order_by('kota.id_provinsi ASC, kota.nama ASC');
+        $this->db->order_by('kota.nama DESC');
+
 		$query = $this->db->get();
 
 		//$query->result_array = mengirim data ke controller dalam bentuk semua data

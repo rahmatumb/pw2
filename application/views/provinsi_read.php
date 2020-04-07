@@ -9,6 +9,7 @@
 
 <h1><?php echo $judul?></h1>
 
+<!--link tambah data-->
 <a href="<?php echo site_url('provinsi/insert');?>">Tambah</a>
 <br /><br />
 
@@ -21,15 +22,21 @@
 		</tr>
 	</thead>
 	<tbody>
+		<!--looping data provinsi-->
 		<?php foreach($data_provinsi as $provinsi):?>
+
+		<!--cetak data per baris-->
 		<tr>
 			<td><?php echo $provinsi['id'];?></td>
 			<td><?php echo $provinsi['nama'];?></td>
 			<td>
+				<!--link ubah data (menyertakan id per baris untuk dikirim ke controller)-->
 				<a href="<?php echo site_url('provinsi/update/'.$provinsi['id']);?>">
 				Ubah
 				</a>
 				|
+
+				<!--link hapus data (menyertakan id per baris untuk dikirim ke controller)-->
 				<a href="<?php echo site_url('provinsi/delete/'.$provinsi['id']);?>">
 				Hapus
 				</a>
@@ -38,6 +45,9 @@
 		<?php endforeach?>		
 	</tbody>
 </table>
+
+<!--link export data-->
+<a href="<?php echo site_url('provinsi/export');?>">Export</a>
 
 </body>
 </html>

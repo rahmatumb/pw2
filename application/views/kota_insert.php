@@ -18,7 +18,10 @@
 			<td>
 				<select name="id_provinsi">
 				<?php foreach($data_provinsi as $provinsi):?>
-				<option value="<?php echo $provinsi['id'];?>"><?php echo $provinsi['nama'];?></option>
+				<option value="<?php echo $provinsi['id'];?>">
+					<?php echo $provinsi['id'];?> 
+					<?php echo $provinsi['nama'];?>
+				</option>
 				<?php endforeach;?>
 				</select>
 			</td>
@@ -26,6 +29,10 @@
 		<tr>
 			<td>Nama</td>
 			<td><input type="text" name="nama" value="" required=""></td>
+		</tr>
+		<tr>
+			<td>Penduduk</td>
+			<td><input type="text" name="penduduk" value="" required=""></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>

@@ -69,7 +69,7 @@ class Provinsi extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
-						'judul' => 'Tambah Provinsi',
+						'judul' => 'Ubah Provinsi',
 
 						//mengirim data provinsi yang dipilih ke view
 						'data_provinsi_single' => $data_provinsi_single,
@@ -109,5 +109,46 @@ class Provinsi extends CI_Controller {
 
 		//mengembalikan halaman ke function read
 		redirect('provinsi/read');
+	}
+
+	public function export() {
+		//load library excel
+		$this->load->library('excel');
+		$excel = $this->excel;
+
+		//judul sheet excel
+		$excel->setActiveSheetIndex(0)->setTitle('Export Data');
+
+		//header table
+		$excel->getActiveSheet()->setCellValue( 'A1', 'ID');
+		$excel->getActiveSheet()->setCellValue( 'B1', 'Nama');
+
+		//function read berfungsi mengambil/read data dari table provinsi di database
+		$data_provinsi = $this->provinsi_model->read();
+
+		//baris awal data dimulai baris 2 (baris 1 digunakan header)
+		$baris = 2;
+
+		//looping data provinsi (mengisi data ke excel)
+		foreach($data_provinsi as $data) {
+
+			//mengisi data ke excel per baris
+			$excel->getActiveSheet()->setCellValue( 'A'.$baris, $data['id']);
+			$excel->getActiveSheet()->setCellValue( 'B'.$baris, $data['nama']);
+
+
+			//increment baris untuk data selanjutnya
+			$baris++;
+		}
+
+		//nama file excel
+		$filename='export_data_provinsi.xls';
+
+		//konfigurasi file excel
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="'.$filename.'"');
+		header('Cache-Control: max-age=0');
+		$objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');
+		$objWriter->save('php://output');
 	}
 }

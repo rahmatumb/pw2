@@ -28,7 +28,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Nama</td>
+			<td>Nama Kota</td>
 			<!--$data_kota_single['nama'] : menampilkan data kota yang dipilih dari database -->
 			<td><input type="text" name="nama" value="<?php echo $data_kota_single['nama'];?>" required=""></td>
 		</tr>
