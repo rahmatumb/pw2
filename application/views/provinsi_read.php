@@ -40,6 +40,7 @@
 				<a href="<?php echo site_url('provinsi/delete/'.$provinsi['id']);?>">
 				Hapus
 				</a>
+				
 			</td>
 		</tr>
 		<?php endforeach?>		
@@ -50,7 +51,7 @@
 <a href="<?php echo site_url('provinsi/export2');?>">Export</a>
 
 <!--link export data standard-->
-<a href="<?php echo site_url('provinsi/export2');?>">Export</a>
+<a href="<?php echo site_url('provinsi/export2');?>">Export2</a>
 
 </body>
 </html>
