@@ -46,8 +46,11 @@
 	</tbody>
 </table>
 
-<!--link export data-->
-<a href="<?php echo site_url('provinsi/export');?>">Export</a>
+<!--link export data library-->
+<a href="<?php echo site_url('provinsi/export2');?>">Export</a>
+
+<!--link export data standard-->
+<a href="<?php echo site_url('provinsi/export2');?>">Export</a>
 
 </body>
 </html>

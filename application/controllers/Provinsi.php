@@ -111,6 +111,7 @@ class Provinsi extends CI_Controller {
 		redirect('provinsi/read');
 	}
 
+
 	public function export() {
 		//function read berfungsi mengambil/read data dari table provinsi di database
 		$data_provinsi = $this->provinsi_model->read();
@@ -150,5 +151,22 @@ class Provinsi extends CI_Controller {
 		header('Cache-Control: max-age=0');
 		$objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');
 		$objWriter->save('php://output');
+	}
+
+	public function export2() {
+		//memanggil function read pada provinsi model
+		//function read berfungsi mengambil/read data dari table provinsi di database
+		$data_provinsi = $this->provinsi_model->read();
+
+		//mengirim data ke view
+		$output = array(
+						'judul' => 'Daftar Provinsi',
+
+						//data provinsi dikirim ke view
+						'data_provinsi' => $data_provinsi
+					);
+
+		//memanggil file view
+		$this->load->view('provinsi_export', $output);
 	}
 }
