@@ -169,4 +169,24 @@ class Provinsi extends CI_Controller {
 		//memanggil file view
 		$this->load->view('provinsi_export', $output);
 	}
+
+	public function export_kota() {
+		//menangkap id data yg dipilih dari view (parameter get)
+		$id_provinsi = $this->uri->segment(3);
+
+		//function read berfungsi mengambil/read data dari table kota di database
+		$this->load->model('kota_model');
+		$data_kota = $this->kota_model->read($id_provinsi);
+
+		//mengirim data ke view
+		$output = array(
+						'judul' => 'Daftar kota',
+
+						//data provinsi dikirim ke view
+						'data_kota' => $data_kota
+					);
+
+		//memanggil file view
+		$this->load->view('provinsi_kota_export', $output);
+	}
 }

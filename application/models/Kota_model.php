@@ -4,14 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Kota_model extends CI_Model {
 
 	//function read berfungsi mengambil/read data dari table kota di database
-	public function read() {
+	public function read($id_provinsi='') {
 
 		//sql read
         $this->db->select('kota.*');
         $this->db->select('provinsi.nama AS nama_provinsi');
         $this->db->from('kota');
         $this->db->join('provinsi', 'kota.id_provinsi = provinsi.id');
-        $this->db->order_by('kota.nama DESC');
+
+        //filter data sesuai id yang dikirim dari controller
+		if($id_provinsi != '') {
+			$this->db->where('kota.id_provinsi', $id_provinsi);
+		}
+
+        $this->db->order_by('kota.id_provinsi ASC, kota.nama ASC');
 
 		$query = $this->db->get();
 

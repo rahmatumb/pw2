@@ -18,6 +18,7 @@
 			<th>ID</th>
 			<th>Provinsi</th>
 			<th>Nama</th>
+			<th>Penduduk</th>
 			<th>Action</th>
 		</tr>
 	</thead>
@@ -27,6 +28,7 @@
 			<td><?php echo $kota['id'];?></td>
 			<td><?php echo $kota['nama_provinsi'];?></td>
 			<td><?php echo $kota['nama'];?></td>
+			<td><?php echo number_format($kota['penduduk']);?></td>
 			<td>
 				<a href="<?php echo site_url('kota/update/'.$kota['id']);?>">
 				Ubah
