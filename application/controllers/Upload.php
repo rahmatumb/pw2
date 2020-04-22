@@ -8,7 +8,7 @@ class Upload extends CI_Controller {
     }
 
     public function index() {
-    	$this->upload_form();
+    	$this->form();
     }
 
     public function form() {
