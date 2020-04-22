@@ -31,4 +31,21 @@ class Chart extends CI_Controller {
 
 	}
 
+	public function column() {
+		//memanggil function read pada kota model
+		//function read berfungsi mengambil/read data dari table kota di database
+		$data_kota = $this->kota_model->read();
+
+		//mengirim data ke view
+		$output = array(
+					'judul' => 'Column Chart',
+					'data_kota' => $data_kota
+				);
+
+		//memanggil file view
+		$this->load->view('chart_column', $output);
+
+
+	}
+
 }
