@@ -11,11 +11,11 @@
 
   <title>SB Admin 2 - <?php echo $judul;;?></title>
 
-  <!-- Custom fonts for this template-->
+  <!-- css yang digunakan theme -->
   <link href="<?php echo base_url('assets/vendor/fontawesome-free/css/all.min.css');?>" rel="stylesheet" type="text/css"> 
   <link href="<?php echo base_url('assets/css/sb-admin-2.min.css');?>" rel="stylesheet">
 
-  <!-- Bootstrap core JavaScript-->
+  <!-- js yang digunakan theme -->
   <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js');?>"></script>
   <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
   <script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js');?>"></script>
@@ -28,6 +28,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
+    <!-- load sidebar -->
     <?php $this->load->view('theme/sidebar');;?>
 
     <!-- Content Wrapper -->
@@ -36,11 +37,13 @@
       <!-- Main Content -->
       <div id="content">
 
+        <!-- load header -->
         <?php $this->load->view('theme/header');;?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
+          <!-- load halaman sesuai controller yang dipilih dari sidebar -->
           <?php $this->load->view($theme_page);;?>
 
         </div>
@@ -49,6 +52,7 @@
       </div>
       <!-- End of Main Content -->
 
+      <!-- load footer -->
       <?php $this->load->view('theme/footer');;?>
 
     </div>
