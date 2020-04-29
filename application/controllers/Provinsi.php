@@ -22,6 +22,7 @@ class Provinsi extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
+						//memanggil view
 						'theme_page' => 'provinsi_read',
 						'judul' => 'Daftar Provinsi',
 
@@ -36,12 +37,13 @@ class Provinsi extends CI_Controller {
 	public function insert() {
 		//mengirim data ke view
 		$output = array(
-						'theme_page' => 'provinsi_insert',
+						//memanggil view
+						//'theme_page' => 'provinsi_insert',
 						'judul' => 'Tambah Provinsi',
 					);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
+		$this->load->view('provinsi_insert', $output);
 	}
 
 	public function insert_submit() {
@@ -71,6 +73,7 @@ class Provinsi extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
+						'theme_page' => 'provinsi_update',
 						'judul' => 'Ubah Provinsi',
 
 						//mengirim data provinsi yang dipilih ke view
@@ -78,7 +81,7 @@ class Provinsi extends CI_Controller {
 					);
 
 		//memanggil file view
-		$this->load->view('provinsi_update', $output);
+		$this->load->view('theme/index', $output);
 	}
 
 	public function update_submit() {

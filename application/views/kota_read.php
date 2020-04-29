@@ -1,19 +1,8 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $judul?></title>
-</head>
-<body>
-
-<h1><?php echo $judul?></h1>
-
-<a href="<?php echo site_url('kota/insert');?>">Tambah</a>
+<a href="<?php echo site_url('kota/insert');?>" class="btn btn-primary">Tambah</a>
 <br /><br />
 
-<table border="1">
-	<thead>
+<table class="table table-striped">
+	<thead class="thead-dark">
 		<tr>
 			<th>ID</th>
 			<th>Provinsi</th>
@@ -30,11 +19,11 @@
 			<td><?php echo $kota['nama'];?></td>
 			<td><?php echo number_format($kota['penduduk']);?></td>
 			<td>
-				<a href="<?php echo site_url('kota/update/'.$kota['id']);?>">
+				<a href="<?php echo site_url('kota/update/'.$kota['id']);?>" class="btn btn-warning">
 				Ubah
 				</a>
-				|
-				<a href="<?php echo site_url('kota/delete/'.$kota['id']);?>">
+				
+				<a href="<?php echo site_url('kota/delete/'.$kota['id']);?>" class="btn btn-danger">
 				Hapus
 				</a>
 			</td>
@@ -42,6 +31,3 @@
 		<?php endforeach?>		
 	</tbody>
 </table>
-
-</body>
-</html>

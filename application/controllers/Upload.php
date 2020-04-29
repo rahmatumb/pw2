@@ -33,21 +33,24 @@ class Upload extends CI_Controller {
 	        	//respon alasan kenapa gagal upload
 	        	$response = $this->upload->display_errors();
 
+	        	//mengirim output ke view
                 $output = array(
                 				'judul' => 'Upload File',
                 				'response' => $response
                 			);
                 $this->load->view('upload', $output);
 
-            //jika gagal berhasil
+            //jika upload berhasil
 	        } else {
 	        	
 	        	//respon upload berhasil 
 	        	$upload_data = $this->upload->data();
 	        	$file_name = $upload_data['file_name'];
 
-	        	$response = 'file uploaded successfully, file name : '.$file_name;
+	        	//pesan berhasil (boleh dirubah)
+	        	$response = 'berhasil upload, nama file  : '.$file_name;
 
+	        	//mengirim output ke view
                 $output = array(
                 				'judul' => 'Upload File',
                 				'response' => $response

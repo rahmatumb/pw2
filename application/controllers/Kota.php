@@ -22,6 +22,7 @@ class Kota extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
+						'theme_page' => 'kota_read',
 						'judul' => 'Daftar kota',
 
 						//data kota dikirim ke view
@@ -29,7 +30,7 @@ class Kota extends CI_Controller {
 					);
 
 		//memanggil file view
-		$this->load->view('kota_read', $output);
+		$this->load->view('theme/index', $output);
 	}
 
 	public function insert() {

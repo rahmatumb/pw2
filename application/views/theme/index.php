@@ -29,7 +29,7 @@
   <div id="wrapper">
 
     <!-- load sidebar -->
-    <?php $this->load->view('theme/sidebar');;?>
+    <?php $this->load->view('theme/sidebar');?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -38,13 +38,13 @@
       <div id="content">
 
         <!-- load header -->
-        <?php $this->load->view('theme/header');;?>
+        <?php $this->load->view('theme/header');?>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
           <!-- load halaman sesuai controller yang dipilih dari sidebar -->
-          <?php $this->load->view($theme_page);;?>
+          <?php $this->load->view($theme_page);?>
 
         </div>
         <!-- /.container-fluid -->
@@ -53,7 +53,7 @@
       <!-- End of Main Content -->
 
       <!-- load footer -->
-      <?php $this->load->view('theme/footer');;?>
+      <?php $this->load->view('theme/footer');?>
 
     </div>
     <!-- End of Content Wrapper -->
