@@ -49,17 +49,17 @@
                     
                   <?php echo validation_errors('<div class="alert alert-danger text-center">', '</div>'); ?>
 
-				  <form method="post" action="<?php echo site_url('user/login/');?>">
-						<div class="form-group">
-							<input type="text" name="username" class="form-control form-control-user" placeholder="Username" value="" required="">
-						</div>
-						<div class="form-group">
-							<input type="password" name="password" class="form-control form-control-user" placeholder="Password" value="" required="">
-						</div>
-						
-						<input type="submit" name="submit" value="Login" class="btn btn-primary btn-user btn-block">
-					</table>
-				  </form>
+        				  <form method="post" action="<?php echo site_url('user/login/');?>">
+        						<div class="form-group">
+        							<input type="text" name="username" class="form-control form-control-user" placeholder="Username" value="" required="">
+        						</div>
+        						<div class="form-group">
+        							<input type="password" name="password" class="form-control form-control-user" placeholder="Password" value="" required="">
+        						</div>
+        						
+        						<input type="submit" name="submit" value="Login" class="btn btn-primary btn-user btn-block">
+                    
+        				  </form>
 
                 </div>
                 <!-- form -->
