@@ -6,6 +6,11 @@ class Provinsi extends CI_Controller {
 	public function __construct() {
         parent::__construct();
 
+        //check session user id (jika belum login, dikembalikan ke login
+        if(empty($this->session->userdata('id'))) {
+        	redirect('user/login');
+		}
+
         //memanggil model
         $this->load->model('provinsi_model');
     }
@@ -38,12 +43,12 @@ class Provinsi extends CI_Controller {
 		//mengirim data ke view
 		$output = array(
 						//memanggil view
-						//'theme_page' => 'provinsi_insert',
+						'theme_page' => 'provinsi_insert',
 						'judul' => 'Tambah Provinsi',
 					);
 
 		//memanggil file view
-		$this->load->view('provinsi_insert', $output);
+		$this->load->view('theme/index', $output);
 	}
 
 	public function insert_submit() {

@@ -56,7 +56,7 @@
                   <i class="fas fa-unlock-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Reset Password
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?php echo site_url('user/logout');?>">
                   <i class="fas fa-power-off fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
