@@ -16,7 +16,7 @@ class User_model extends CI_Model {
 	}
 
 	//function read berfungsi mengambil/read data dari table user di database
-	public function read_single($username) {
+	public function read_single($username, $password) {
 
 		//sql read
 		$this->db->select('*');
@@ -25,6 +25,7 @@ class User_model extends CI_Model {
 		//$id = id data yang dikirim dari controller (sebagai filter data yang dipilih)
 		//filter data sesuai id yang dikirim dari controller
 		$this->db->where('username', $username);
+		$this->db->where('password', $password);
 
 		$query = $this->db->get();
 		

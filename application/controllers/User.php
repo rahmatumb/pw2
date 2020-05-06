@@ -53,17 +53,14 @@ class User extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
-		//mengambil password sesuai username
-		$data_user = $this->user_model->read_single($username);
+		//password encrypt
+		$password_encrypt = md5($password);
 
-		//password dari database
-		$password_encrypt = $data_user['password'];
-
-		//dekripsi password (karena password tersimpan di database terenkripsi)
-		$password_decrypt = $this->encrypt->decode($password_encrypt);
+		//check username & password sesuai dengan di database
+		$data_user = $this->user_model->read_single($username, $password_encrypt);
 		
-		//jika password cocok : dikembalikan ke fungsi login_submit (validasi sukses)
-		if($password == $password_decrypt) {
+		//jika cocok : dikembalikan ke fungsi login_submit (validasi sukses)
+		if(!empty($data_user)) {
 
 			//buat session user 
 			$this->session->set_userdata('id', $data_user['id']);
@@ -71,7 +68,7 @@ class User extends CI_Controller {
 
 			return TRUE;
 
-		//jika password tidak cocok : dikembalikan ke fungsi login_submit (validasi gagal)
+		//jika tidak cocok : dikembalikan ke fungsi login_submit (validasi gagal)
 		} else {
 
 			//membuat pesan error
@@ -90,5 +87,20 @@ class User extends CI_Controller {
 
 		//mengembalikan halaman ke function read
 		redirect('user/login');
+	}
+
+	public function reset_password() {
+		
+		//memanggil fungsi login submit	(agar di view tidak dilihat fungsi login submit)
+		$this->login_submit();
+
+		//mengirim data ke view
+		$output = array(
+						'theme_page' => 'reset_password',
+						'judul' => 'Reset Password'
+					);
+
+		//memanggil file view
+		$this->load->view('theme/index', $output);
 	}
 }

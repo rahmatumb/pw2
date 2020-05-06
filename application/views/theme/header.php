@@ -52,7 +52,7 @@
 
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item ajax-link" href="#">
+                <a class="dropdown-item ajax-link" href="<?php echo site_url('user/reset_password');?>">
                   <i class="fas fa-unlock-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Reset Password
                 </a>
