@@ -1,7 +1,7 @@
 <a href="<?php echo site_url('kota/insert');?>" class="btn btn-primary">Tambah</a>
 <br /><br />
 
-<table class="table table-striped">
+<table class="table table-striped" id="datatables">
 	<thead class="thead-dark">
 		<tr>
 			<th>ID</th>

@@ -52,10 +52,7 @@
 	        //format data penduduk kota
 	        data: [
 	        		<?php foreach($data_kota as $kota):?>
-	        		{
-			            name: '<?php echo $kota['nama'];?>',
-			            y: <?php echo $kota['penduduk'];?>
-			        },
+	        		{name: '<?php echo $kota['nama'];?>',y: <?php echo $kota['penduduk'];?>},
 			        <?php endforeach?>
 			   	]
 

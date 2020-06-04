@@ -15,6 +15,10 @@
   <link href="<?php echo base_url('assets/vendor/fontawesome-free/css/all.min.css');?>" rel="stylesheet" type="text/css"> 
   <link href="<?php echo base_url('assets/css/sb-admin-2.min.css');?>" rel="stylesheet">
 
+  <!-- css yang digunakan datatables -->
+  <link href="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.min.css');?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -65,7 +69,15 @@
   <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
   <script src="<?php echo base_url('assets/vendor/jquery-easing/jquery.easing.min.js');?>"></script>
   <script src="<?php echo base_url('assets/js/sb-admin-2.min.js');?>"></script>
-  
+
+  <!-- js yang digunakan datatables -->
+  <script src="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.min.js')?>"></script>
+  <script type="text/javascript">
+    $(document).ready( function () {
+      $('#datatables').DataTable();
+    });
+  </script>
+
 </body>
 
 </html>
