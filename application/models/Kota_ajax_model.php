@@ -10,10 +10,10 @@ class Kota_ajax_model extends CI_Model {
     var $column_order = array(null, 'nama', 'penduduk'); 
 
     //field yang diizin untuk pencarian 
-    var $column_search = array('nama'); 
+    var $column_search = array('nama', 'penduduk'); 
 
     //field pertama yang diurutkan
-    var $order = array('id' => 'asc'); 
+    var $order = array('nama' => 'asc'); 
  
     public function __construct() {
         parent::__construct();
@@ -21,8 +21,9 @@ class Kota_ajax_model extends CI_Model {
  
     private function _get_datatables_query() {
          
+        $this->db->select('*');
         $this->db->from($this->table);
- 
+    
         $i = 0;
      
         foreach ($this->column_search as $item) // looping awal

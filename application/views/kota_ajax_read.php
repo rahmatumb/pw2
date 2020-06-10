@@ -1,6 +1,3 @@
-<a href="<?php echo site_url('kota/insert');?>" class="btn btn-primary">Tambah</a>
-<br /><br />
-
 <table id="table" class="table table-striped">
 	<thead class="thead-dark">
 		<tr>
@@ -21,28 +18,23 @@
 <script type="text/javascript">
     var table;
     jQuery(document).ready(function() {
- 
-        //datatables
         table = $('#table').DataTable({ 
  
             "processing": true, 
-            "serverSide": true, 
+            "serverSide": true,
+            "lengthChange": false,
+            "pageLength": 5,
             "order": [], 
             "ajax": {
                 "url": "<?php echo site_url('kota_ajax/datatables')?>",
                 "type": "POST"
             },
- 
-             
             "columnDefs": [
             { 
                 "targets": [ 0 ], 
                 "orderable": false, 
             },
             ],
- 
         });
- 
     });
- 
 </script>

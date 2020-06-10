@@ -21,12 +21,13 @@ class Chart extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
+					'theme_page' => 'chart_pie',
 					'judul' => 'Pie Chart',
 					'data_kota' => $data_kota
 				);
 
 		//memanggil file view
-		$this->load->view('chart_pie', $output);
+		$this->load->view('theme/index', $output);
 
 
 	}
@@ -38,12 +39,13 @@ class Chart extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
+					'theme_page' => 'chart_column',
 					'judul' => 'Column Chart',
 					'data_kota' => $data_kota
 				);
 
 		//memanggil file view
-		$this->load->view('chart_column', $output);
+		$this->load->view('theme/index', $output);
 
 
 	}

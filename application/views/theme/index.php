@@ -18,7 +18,11 @@
   <!-- css yang digunakan datatables -->
   <link href="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.min.css');?>" rel="stylesheet">
   <link href="<?php echo base_url('assets/vendor/datatables/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
-
+  <style type="text/css">
+    .dataTables_filter {
+      color: red;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -74,7 +78,10 @@
   <script src="<?php echo base_url('assets/vendor/datatables/jquery.dataTables.min.js')?>"></script>
   <script type="text/javascript">
     $(document).ready( function () {
-      $('#datatables').DataTable();
+      $('#datatables').DataTable({
+        "lengthChange": false,
+        "pageLength": 5,
+      });
     });
   </script>
 

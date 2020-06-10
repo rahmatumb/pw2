@@ -30,6 +30,8 @@ class Kota_ajax extends CI_Controller {
 
     //fungsi menampilkan data dalam bentuk json
 	public function datatables() {
+        //menunda loading (bisa dihapus, hanya untuk menampilkan pesan processing)
+        //sleep(2);
 
         //memanggil fungsi model datatables
         $list = $this->kota_ajax_model->get_datatables();
@@ -42,7 +44,7 @@ class Kota_ajax extends CI_Controller {
             $row = array();
             $row[] = $no;
             $row[] = $field['nama'];
-            $row[] = $field['penduduk'];
+            $row[] = number_format($field['penduduk']);
 
             $data[] = $row;
         }
