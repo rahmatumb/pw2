@@ -13,7 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <ul>
 	<li>Nama : <?php echo $post['nama'];?></li>
 	<li>Umur : <?php echo $post['umur'];?></li>
-	<li>Umur : <?php echo $post['rentang'];?></li>
 </ul>
 
 </body>
