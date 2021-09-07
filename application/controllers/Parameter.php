@@ -25,13 +25,11 @@ class Parameter extends CI_Controller {
 	public function get_response() {
 		//menangkap data url
 		$tanda = $this->uri->segment(3);
-		$warna = $this->uri->segment(4);
 
 		//mengirim data ke view
 		$output = array(
 					'judul' => 'Parameter Get Response',
 					'tanda' => $tanda,
-					'warna' => $warna
 				);
 
 		//memanggil file view
