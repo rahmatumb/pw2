@@ -53,21 +53,12 @@ class Parameter extends CI_Controller {
 		$nama = $this->input->post('nama');
 		$umur = $this->input->post('umur');
 
-		//hitung rentang usia
-		if($umur >= 0 && $umur <= 5) {
-			$rentang = 'Balita';
-		} else if($umur >= 6 && $umur <= 12) {
-			$rentang = 'Anak';
-		}
-		//....dilanjutkan else ifnya
-
 		//mengirim data ke view
 		$output = array(
 					'judul' => 'Parameter Post Response',
 					'post' => array(
 						'nama' => $nama,
 						'umur' => $umur,
-						'rentang' => $rentang
 					)
 				);
 
