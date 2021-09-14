@@ -6,11 +6,6 @@ class Provinsi extends CI_Controller {
 	public function __construct() {
         parent::__construct();
 
-        //check session user id (jika belum login, dikembalikan ke login
-        if(empty($this->session->userdata('id'))) {
-        	redirect('user/login');
-		}
-
         //memanggil model
         $this->load->model('provinsi_model');
     }
@@ -28,7 +23,6 @@ class Provinsi extends CI_Controller {
 		//mengirim data ke view
 		$output = array(
 						//memanggil view
-						'theme_page' => 'provinsi_read',
 						'judul' => 'Daftar Provinsi',
 
 						//data provinsi dikirim ke view
@@ -36,19 +30,18 @@ class Provinsi extends CI_Controller {
 					);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
+		$this->load->view('provinsi_read', $output);
 	}
 
 	public function insert() {
 		//mengirim data ke view
 		$output = array(
 						//memanggil view
-						'theme_page' => 'provinsi_insert',
 						'judul' => 'Tambah Provinsi',
 					);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
+		$this->load->view('provinsi_insert', $output);
 	}
 
 	public function insert_submit() {
@@ -78,7 +71,6 @@ class Provinsi extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
-						'theme_page' => 'provinsi_update',
 						'judul' => 'Ubah Provinsi',
 
 						//mengirim data provinsi yang dipilih ke view
@@ -86,7 +78,7 @@ class Provinsi extends CI_Controller {
 					);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
+		$this->load->view('provinsi_update', $output);
 	}
 
 	public function update_submit() {

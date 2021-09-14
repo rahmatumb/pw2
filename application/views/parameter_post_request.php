@@ -14,11 +14,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<table>
 		<tr>
 			<td>Nama</td>
-			<td><input type="text" name="nama" value=""></td>
+			<td><input type="text" name="name" value=""></td>
 		</tr>
 		<tr>
 			<td>Umur</td>
 			<td><input type="text" name="umur" value=""></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td>
+				<input type="radio" name="gender" value="Pria"> Pria
+				<input type="radio" name="gender" value="Wanita"> Wanita
+			</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
