@@ -22,7 +22,6 @@ class Kota extends CI_Controller {
 
 		//mengirim data ke view
 		$output = array(
-						'theme_page' => 'kota_read',
 						'judul' => 'Daftar kota',
 
 						//data kota dikirim ke view
@@ -30,7 +29,7 @@ class Kota extends CI_Controller {
 					);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
+		$this->load->view('kota_read', $output);
 	}
 
 	public function insert() {
@@ -53,12 +52,14 @@ class Kota extends CI_Controller {
 		//menangkap data input dari view
 		$id_provinsi = $this->input->post('id_provinsi');
 		$nama = $this->input->post('nama');
+		$penduduk = $this->input->post('penduduk');
 
 		//mengirim data ke model
 		$input = array(
 						//format : nama field/kolom table => data input dari view
 						'id_provinsi' => $id_provinsi,
 						'nama' => $nama,
+						'penduduk' => $penduduk,
 					);
 
 		//memanggil function insert pada kota model
@@ -101,12 +102,14 @@ class Kota extends CI_Controller {
 		//menangkap data input dari view
 		$id_provinsi = $this->input->post('id_provinsi');
 		$nama = $this->input->post('nama');
+		$penduduk = $this->input->post('penduduk');
 
 		//mengirim data ke model
 		$input = array(
 						//format : nama field/kolom table => data input dari view
 						'id_provinsi' => $id_provinsi,
 						'nama' => $nama,
+						'penduduk' => $penduduk,
 					);
 
 		//memanggil function update pada kota model

@@ -1,7 +1,7 @@
-<a href="<?php echo site_url('kota/insert');?>" class="btn btn-primary">Tambah</a>
+<a href="<?php echo site_url('kota/insert');?>">Tambah</a>
 <br /><br />
 
-<table class="table table-striped" id="datatables">
+<table border="1">
 	<thead class="thead-dark">
 		<tr>
 			<th>ID</th>
@@ -19,11 +19,11 @@
 			<td><?php echo $kota['nama'];?></td>
 			<td><?php echo number_format($kota['penduduk']);?></td>
 			<td>
-				<a href="<?php echo site_url('kota/update/'.$kota['id']);?>" class="btn btn-warning">
+				<a href="<?php echo site_url('kota/update/'.$kota['id']);?>">
 				Ubah
 				</a>
 				
-				<a href="<?php echo site_url('kota/delete/'.$kota['id']);?>" class="btn btn-danger">
+				<a href="<?php echo site_url('kota/delete/'.$kota['id']);?>">
 				Hapus
 				</a>
 			</td>

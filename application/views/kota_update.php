@@ -33,6 +33,10 @@
 			<td><input type="text" name="nama" value="<?php echo $data_kota_single['nama'];?>" required=""></td>
 		</tr>
 		<tr>
+			<td>Penduduk</td>
+			<td><input type="text" name="penduduk" value="<?php echo $data_kota_single['penduduk'];?>" required=""></td>
+		</tr>
+		<tr>
 			<td>&nbsp;</td>
 			<td><input type="submit" name="submit" value="Simpan"></td>
 		</tr>

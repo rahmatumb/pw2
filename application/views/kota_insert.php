@@ -19,7 +19,6 @@
 				<select name="id_provinsi">
 				<?php foreach($data_provinsi as $provinsi):?>
 				<option value="<?php echo $provinsi['id'];?>">
-					<?php echo $provinsi['id'];?> 
 					<?php echo $provinsi['nama'];?>
 				</option>
 				<?php endforeach;?>

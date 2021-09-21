@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <p><?php echo $judul?></p>
 
-<p><?php echo $isi?></p>
+<p><?php echo $content?></p>
 
 </body>
 </html>
