@@ -112,4 +112,40 @@ class Provinsi extends CI_Controller {
 		//mengembalikan halaman ke function read
 		redirect('provinsi/read');
 	}
+
+	public function read_export() {
+		//memanggil function read pada provinsi model
+		//function read berfungsi mengambil/read data dari table provinsi di database
+		$data_provinsi = $this->provinsi_model->read();
+	
+		//mengirim data ke view
+		$output = array(
+						//memanggil view
+						'judul' => 'Daftar Provinsi',
+
+						//data provinsi dikirim ke view
+						'data_provinsi' => $data_provinsi
+					);
+
+		//memanggil file view
+		$this->load->view('provinsi_read_export', $output);
+	}
+
+	public function data_export() {
+		//memanggil function read pada provinsi model
+		//function read berfungsi mengambil/read data dari table provinsi di database
+		$data_provinsi = $this->provinsi_model->read();
+	
+		//mengirim data ke view
+		$output = array(
+						//memanggil view
+						'judul' => 'Daftar Provinsi',
+
+						//data provinsi dikirim ke view
+						'data_provinsi' => $data_provinsi
+					);
+
+		//memanggil file view
+		$this->load->view('provinsi_data_export', $output);
+	}
 }

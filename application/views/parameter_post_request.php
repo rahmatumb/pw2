@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<table>
 		<tr>
 			<td>Nama</td>
-			<td><input type="text" name="name" value=""></td>
+			<td><input type="text" name="nama" value=""></td>
 		</tr>
 		<tr>
 			<td>Umur</td>
