@@ -23,7 +23,7 @@
 				Ubah
 				</a>
 				
-				<a href="<?php echo site_url('kota/delete/'.$kota['id']);?>">
+				<a href="<?php echo site_url('kota/delete/'.$kota['id']);?>" onClick="return confirm('Apakah anda yakin?')">
 				Hapus
 				</a>
 			</td>

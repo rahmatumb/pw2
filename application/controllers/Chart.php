@@ -27,9 +27,7 @@ class Chart extends CI_Controller {
 				);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
-
-
+		$this->load->view('chart_pie', $output);
 	}
 
 	public function column() {
@@ -45,7 +43,7 @@ class Chart extends CI_Controller {
 				);
 
 		//memanggil file view
-		$this->load->view('theme/index', $output);
+		$this->load->view('chart_column', $output);
 
 
 	}
