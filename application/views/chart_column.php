@@ -57,6 +57,24 @@ Highcharts.chart('container', {
 				},
 				<?php endforeach?>
 		    ]
+            //format data original
+            /*[{
+                name: 'Tokyo',
+                data: [49]
+
+            }, {
+                name: 'New York',
+                data: [83]
+
+            }, {
+                name: 'London',
+                data: [48]
+
+            }, {
+                name: 'Berlin',
+                data: [42]
+
+            }]*/
 });
 </script>
 

@@ -18,10 +18,9 @@ class Chart extends CI_Controller {
 		//memanggil function read pada kota model
 		//function read berfungsi mengambil/read data dari table kota di database
 		$data_kota = $this->kota_model->read();
-
+		
 		//mengirim data ke view
 		$output = array(
-					'theme_page' => 'chart_pie',
 					'judul' => 'Pie Chart',
 					'data_kota' => $data_kota
 				);
