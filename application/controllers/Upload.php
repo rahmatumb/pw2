@@ -23,8 +23,9 @@ class Upload extends CI_Controller {
 
 			//setting library upload
 	        $config['upload_path']          = './upload_folder/';
-	        $config['allowed_types']        = 'gif|jpg|png|pdf';
+	        $config['allowed_types']        = 'gif|jpg|png';
 	        $config['max_size']             = 10000;
+	        $config['encrypt_name']         = TRUE;
 	        $this->load->library('upload', $config);
 
 	        //jika gagal upload
