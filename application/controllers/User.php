@@ -36,7 +36,7 @@ class User extends CI_Controller {
 
 			//aturan validasi input login
 			$this->form_validation->set_rules('username', 'Username', 'required|alpha|callback_login_check');
-			$this->form_validation->set_rules('password', 'Password', 'required|alpha_numeric|min_length[5]');
+			$this->form_validation->set_rules('password', 'Password', 'required|alpha_numeric|min_length[4]');
 
 			//jika validasi sukses 
 			if ($this->form_validation->run() == TRUE) {

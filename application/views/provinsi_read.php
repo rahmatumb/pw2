@@ -1,19 +1,9 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title><?php echo $judul;?></title>
-</head>
-<body>
-
 <!--link tambah data-->
 <a href="<?php echo site_url('provinsi/insert');?>">Tambah</a>
 <br /><br />
 
-<table border="1">
-	<thead>
+<table class="table table-striped">
+	<thead class="thead-dark">
 		<tr>
 			<th>ID</th>
 			<th>Nama</th>
@@ -30,12 +20,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td><?php echo $provinsi['nama'];?></td>
 			<td>
 				<!--link ubah data (menyertakan id per baris untuk dikirim ke controller)-->
-				<a href="<?php echo site_url('provinsi/update/'.$provinsi['id']);?>">
+				<a href="<?php echo site_url('provinsi/update/'.$provinsi['id']);?>" class="btn btn-primary">
 				Ubah
 				</a>
 
 				<!--link hapus data (menyertakan id per baris untuk dikirim ke controller)-->
-				<a href="<?php echo site_url('provinsi/delete/'.$provinsi['id']);?>" onClick="return confirm('Apakah anda yakin?')">
+				<a href="<?php echo site_url('provinsi/delete/'.$provinsi['id']);?>" onClick="return confirm('Apakah anda yakin?')" class="btn btn-danger">
 				Hapus
 				</a>
 				
@@ -44,6 +34,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php endforeach?>		
 	</tbody>
 </table>
-
-</body>
-</html>

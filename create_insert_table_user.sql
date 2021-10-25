@@ -7,4 +7,4 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`) VALUES
-(1,	'demo',	'QpgQwaiofZLSUhzEQ0gTNpilsh16SNWljTL0tQH3ocpUeksk0uvvxtmy5/ROqzF712kR8dh7940sRZo7TUAcgA==',	'User Demo');
+(1,	'demo',	'fe01ce2a7fbac8fafaed7c982a04e229',	'User Demo');

@@ -16,6 +16,7 @@ class Provinsi extends CI_Controller {
 	}
 
 	public function read() {
+		echo $this->session->userdata('id');
 		//memanggil function read pada provinsi model
 		//function read berfungsi mengambil/read data dari table provinsi di database
 		$data_provinsi = $this->provinsi_model->read();
@@ -24,13 +25,14 @@ class Provinsi extends CI_Controller {
 		$output = array(
 						//memanggil view
 						'judul' => 'Daftar Provinsi',
+						'theme_page' => 'provinsi_read',
 
 						//data provinsi dikirim ke view
 						'data_provinsi' => $data_provinsi
 					);
 
 		//memanggil file view
-		$this->load->view('provinsi_read', $output);
+		$this->load->view('theme/index', $output);
 	}
 
 	public function insert() {
@@ -41,7 +43,7 @@ class Provinsi extends CI_Controller {
 					);
 
 		//memanggil file view
-		$this->load->view('provinsi_insert', $output);
+		$this->load->view('provinsi_read', $output);
 	}
 
 	public function insert_submit() {
